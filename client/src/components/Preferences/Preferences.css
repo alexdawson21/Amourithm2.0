@@ -1,0 +1,11 @@
+
+ol {
+    border: solid black 1px;
+    width: 350px;
+    margin: auto;
+    font-family: 'Rubik', sans-serif;
+}
+
+th {
+    font-family: 'Rubik', sans-serif;
+}

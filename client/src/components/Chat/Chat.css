@@ -1,0 +1,12 @@
+#chatbox {
+    position: relative;
+    height: 500px;
+    width: 80%;
+    border: 3px solid black;
+}
+
+#chatControl {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
