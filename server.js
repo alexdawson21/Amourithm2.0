@@ -22,7 +22,7 @@ var NewUser = require("./models/profilemodel.js");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dummydb", function() {
   console.log("Mongoose connected!")
 });
-
+//test stuff
 
 
 var server = app.listen(PORT, function() {
