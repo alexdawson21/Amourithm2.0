@@ -53,7 +53,7 @@ class App extends Component {
   render() {
     return (
     <div>
-      {/* <Top 
+      <Top 
   name = {this.state.profile.name}/><br></br>
   <Preferences 
   movies={this.state.profile.favMovies}
@@ -63,7 +63,7 @@ class App extends Component {
   hobbies={this.state.profile.favHobbies}
   music={this.state.profile.favMusic}/><br></br>
   <Bio 
-  bio = {this.state.profile.bio}/> */}
+  bio = {this.state.profile.bio}/>
   <Create/>
  
   {/* <Suitors
