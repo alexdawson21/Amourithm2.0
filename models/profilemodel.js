@@ -36,7 +36,10 @@ var Userprofile = new Schema({
     trim: true,
     required: "String is Required"
   },
-  
+  image: {
+    type: String,
+    trim: true,
+  }, 
   favMovies: {
     type: Array,
     trim: true,
@@ -67,11 +70,6 @@ var Userprofile = new Schema({
   matches: {
     type: Array,
     trim: true,
-  },
-
-  picture: {
-       data: Buffer, 
-       contentType: String 
   },
 
   bio: {

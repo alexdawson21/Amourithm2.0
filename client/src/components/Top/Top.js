@@ -5,7 +5,7 @@ import './Top.css';
 const Top = (props)=>(
     <div>
     <h1>{props.name}</h1>
-    <img src={require('./image/profilepic.jpg')}/>
+    <img src={props.image}/>
     </div>
 )
            

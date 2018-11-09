@@ -13,6 +13,7 @@ class App extends Component {
 
   state = {
     profile: {
+        image:"",
         seeking: "",
         name: "",
         bio: "",
@@ -30,8 +31,8 @@ class App extends Component {
   componentDidMount() {
     //request to load in the users profile, will be changed to be based on ID once synced with login
       axios.get("api/profile")
-      .then(res=>this.setState({profile: res.data[0]}))
-
+      .then(res=>this.setState({profile: res.data[14]}))
+    setTimeout(()=>{console.log(this.state.profile)},1000)
       //requesto to load potential matches. Is set to timeout so that user preferences can be loaded in.
       //res.data should be an array of users matching the gender designation.
       //res.data is assigned to this.state.suitors which is then passed into the suitors component as props. 
@@ -53,7 +54,8 @@ class App extends Component {
   render() {
     return (
     <div>
-      <Top 
+      <Top
+  image={this.state.profile.image} 
   name = {this.state.profile.name}/><br></br>
   <Preferences 
   movies={this.state.profile.favMovies}

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import "./Create.css";
 import axios from "axios";
-
+import cloudinary from "cloudinary-react";
 
 class Create extends Component {
     state ={
-        image: null,
+        image: "",
         newProfile: {},
         email: '',
         password:'',
@@ -84,6 +84,7 @@ class Create extends Component {
             newProfile: {
                 email: this.state.email,
                 password: this.state.password,
+                image: this.state.image,
                 name: this.state.name,
                 gender: this.state.gender,
                 seeking: this.state.seeking,
@@ -101,34 +102,33 @@ class Create extends Component {
     onSubmit = (e) =>{
         e.preventDefault();
         axios.post("api/profile", this.state.newProfile);
+        setTimeout(() => {
+            console.log(this.state.newProfile)
+        }, 1000);
     }
 
-    imageSelectHandler = event =>{
-        event.preventDefault()
-        console.log(event.target.files[0]);
-        this.setState({image: event.target.files[0]});
-
-    }
-    imageSubmit = (e) =>{
-        e.preventDefault()
-        const Form = new FormData
-        Form.append('file',this.state.image)
-        Form.append('upload_preset','bttecqzu')
-
-        // Form.append("image", this.state.image)
-        axios({
-           url: "cloudinary://549864764975958:YDBebkMLS_2pm5CWxe9lXpUz_Z0@hxgiperio",
-            method: 'POST',
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            data: Form
-        }).then((res)=>{
-            console.log(res)
-        })
+    uploadWidget = () =>{
+        window.cloudinary.openUploadWidget({ cloud_name: 'hxgiperio', upload_preset: 'bttecqzu', tags:[]},
+            (error, result)=> {
+                console.log(result[0].url)
+                setTimeout(()=>{
+                    this.setState({image: result[0].url})
+                },1500)
+                
+            });
     }
 
     render(){
         return(
 <div>
+<div className="main">
+                <h1>Add your profile picture!</h1>
+                <div className="upload">
+                    <button onClick={this.uploadWidget.bind(this)} className="upload-button">
+                        Add Image
+                    </button>
+                </div>
+            </div>
         <form id = "Userinfo">
             <label>Email</label>
             <input 
@@ -328,17 +328,6 @@ class Create extends Component {
                 onChange={e => this.change(e)}></input>
             </form>
             <button onClick={e =>this.setForm(e)}>Save info</button>
-
-            <form action=""  
-            onChange={this.imageSelectHandler}
-            onSubmit={e => this.imageSubmit(e)} 
-            encType="multipart/form-data">
-            <div className="custom-file mb-3">
-                    <input type="file" name="image" id="image" className="file-input"></input>    
-                </div>
-                <label for="image" class="file-label">Choose File</label>
-                    <input type="submit" value="Submit" class="btn btn-primary"></input>
-            </form>
                 
                 <button onClick={e => this.onSubmit(e)}>Submit</button>
 

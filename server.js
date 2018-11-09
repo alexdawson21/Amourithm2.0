@@ -24,7 +24,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dummydb", funct
 });
 //test stuff
 
-
 var server = app.listen(PORT, function() {
     console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
