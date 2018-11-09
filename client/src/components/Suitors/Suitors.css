@@ -1,0 +1,27 @@
+.suitorbox {
+    display: flex;
+    justify-content: space-around;
+    /* max-width: 1200px;
+    width: 80%; */
+    overflow: scroll;
+   text-align: center;
+    margin: auto 0;
+    position: relative;
+}
+
+img {
+    border-radius: 50%;
+    width: 200px;
+    height: 275px;
+    text-align: center;
+}
+
+h3{ text-align: center;
+    font-size: 20px;
+    color: #B4886B;
+}
+
+h1 {
+    font-size: 25px;
+    color: #B4886B;
+}

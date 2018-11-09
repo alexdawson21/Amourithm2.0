@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './Preferences.css';
 
 const Preferences = (props) =>(
-            <div>
+            <div className = "">
                 <div>
-                    <tr>
+                    <tr >
                         <th>Movies</th>
                         <th>Shows</th>
                         <th>Hobbies</th>
@@ -40,6 +40,7 @@ const Preferences = (props) =>(
                         </td>
                     </tr>
                 </div>
+                <br></br>
                 <br></br>
                 <div>
                     <tr>
