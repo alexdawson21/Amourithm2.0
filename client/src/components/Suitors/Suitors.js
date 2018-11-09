@@ -11,12 +11,28 @@ const Suitors = ({suitors}) =>{
                 <h3>{suitor.name}</h3>
                 
 
+
             <img src = {"images/"+suitor.image}></img>
             </div>
             )}
 
         </div>)
     
+class Suitors extends Component {
+    state = {
+        match: {}
+    }
+
+    matcher = () =>{
+        
+    } 
+    render(){
+        return(
+            <div>
+
+            </div>
+        )
+    }
 }
 
 

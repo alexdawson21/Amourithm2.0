@@ -7,4 +7,7 @@ router.route("/men")
 router.route("/women")
     .get(suitorController.findWomen)
 
+router.route("/word")
+    .get(suitorController.findWomen)
+
 module.exports = router;
