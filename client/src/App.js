@@ -125,8 +125,8 @@ class App extends Component {
   bio = {this.state.profile.bio}/> */}
   <Create/>
  
-  {/* <Suitors
-  suitors = {this.state.suitors}/> */}
+  <Suitors
+  suitors = {this.state.suitors}/>
   </div>
     );
   }

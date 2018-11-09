@@ -130,24 +130,24 @@ class Create extends Component {
                 </div>
             </div>
             <br></br>
-        <form id = "Userinfo">
+        <form id = "rcorners2">
             <label>Email</label>
             <input 
             type="email"
             name="email"
-            placeholder="email"
+            placeholder="..."
             onChange={e => this.change(e)} ></input>
             <label>Password</label>
             <input 
             type="text"
             name="password"
-            placeholder="password"
+            placeholder="..."
             onChange={e => this.change(e)} ></input>
             <label>Name</label>
             <input 
             type="text"
             name="name"
-            placeholder="name"
+            placeholder="..."
             onChange={e => this.change(e)} ></input>
             <form>
                 <label class="container">Gender</label>
@@ -188,7 +188,7 @@ class Create extends Component {
             </form>
         </form>
     <br></br>
-        <form id = "favourites">
+        <form id = "rcorners3">
                 <br></br>
                 <label>Favorite Movies</label>
                 <input
