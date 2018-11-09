@@ -2,8 +2,21 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './Suitors.css';
 
-const Suitors = (props) =>{
-    
+class Suitors extends Component {
+    state = {
+        match: {}
+    }
+
+    matcher = () =>{
+        
+    } 
+    render(){
+        return(
+            <div>
+
+            </div>
+        )
+    }
 }
 
 
