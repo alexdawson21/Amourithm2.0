@@ -122,13 +122,14 @@ class Create extends Component {
         return(
 <div>
 <div className="main">
-                <h1>Add your profile picture!</h1>
+                <h1 id="rcorners1" >Add your profile picture!</h1>
                 <div className="upload">
                     <button onClick={this.uploadWidget.bind(this)} className="upload-button">
-                        Add Image
+                        Upload Image
                     </button>
                 </div>
             </div>
+            <br></br>
         <form id = "Userinfo">
             <label>Email</label>
             <input 
@@ -149,33 +150,36 @@ class Create extends Component {
             placeholder="name"
             onChange={e => this.change(e)} ></input>
             <form>
-                <label>Gender</label>
+                <label class="container">Gender</label>
                 <input 
-                type="radio"
+                type="checkbox"
                 id = "gmale"
                 name="gender"
                 value="male"
                 onChange={e => this.radioForm(e)} ></input>
-                <label for="gmale">Male</label>
+                <label for="gmale">Male<br></br></label>
                 <input 
-                type="radio"
+                type="checkbox"
                 id = "gfemale"
                 name="gender"
                 value="female"
                 onChange={e => this.radioForm(e)} ></input>
-                <label for="gfemale">Female</label>
+               
+                <label for="gfemale">Female<br></br></label>
             </form>
             <form>
+                <br></br>
                 <label>Interested in?</label>
+                <br></br>
                 <input 
-                type="radio"
+                type="checkbox"
                 id = "smale"
                 name="seeking"
                 value="male"
                 onChange={e => this.radioForm(e)} ></input>
-                <label for="smale">Male</label>
+                <label for="smale">Male</label><br></br>
                 <input 
-                type="radio"
+                type="checkbox"
                 id = "sfemale"
                 name="seeking"
                 value="female"
@@ -183,8 +187,9 @@ class Create extends Component {
                 <label for="sfemale">Female</label>
             </form>
         </form>
-
+    <br></br>
         <form id = "favourites">
+                <br></br>
                 <label>Favorite Movies</label>
                 <input
                 type= "text"
@@ -206,7 +211,7 @@ class Create extends Component {
                 type= "text"
                 name="movieFive"
                 onChange={e => this.change(e)} ></input>
-
+                <br></br>
                 <label>Favorite Shows</label>
                 <input
                 type= "text"
@@ -228,7 +233,7 @@ class Create extends Component {
                 type= "text"
                 name="showFive"
                 onChange={e => this.change(e)} ></input>
-
+                <br></br>
                 <label>Favorite Books</label>
                 <input
                 type= "text"
@@ -250,8 +255,8 @@ class Create extends Component {
                 type= "text"
                 name="bookFive"
                 onChange={e => this.change(e)} ></input>
-
-                <label>Favorite Comics/Manga/Graphic Novels</label>
+                <br></br>
+                <label>Favourite Graphic Novels</label>
                 <input
                 type= "text"
                 name="graphOne"
@@ -272,7 +277,7 @@ class Create extends Component {
                 type= "text"
                 name="graphFive"
                 onChange={e => this.change(e)} ></input>
-
+                <br></br>
                 <label>Favorite Music</label>
                 <input
                 type= "text"
@@ -294,7 +299,7 @@ class Create extends Component {
                 type= "text"
                 name="musicFive"
                 onChange={e => this.change(e)} ></input>
-
+                <br></br>
                 <label>Favorite Hobbies</label>
                 <input
                 type= "text"
@@ -317,6 +322,7 @@ class Create extends Component {
                 name="hobbyFive"
                 onChange={e => this.change(e)} ></input>
             </form>
+            <br></br>
             <button onClick={e=>this.setFaves(e)}>Save Favourites</button>
 
             <form>

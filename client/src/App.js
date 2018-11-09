@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Navbar from "./components/Navbar";
+import Heading from "./components/Heading";
 import Bio from "./components/Bio";
 import Preferences from "./components/Preferences";
 import Top from "./components/Top";
@@ -25,7 +27,60 @@ class App extends Component {
         favMusic: [],
         
     },
-    suitors:[],
+    suitors:[ 
+      {
+        "id": 1,
+        "image": "image1.jpeg",
+        "name": "Tom"
+      },
+      {
+        "id": 2,
+        "image": "image2.jpeg",
+        "name": "John"    
+      },
+      {
+        "id": 3,
+        "image": "image3.jpeg",
+        "name": "Alex"
+      },
+
+      {
+        "id": 5,
+        "image": "image5.jpeg",
+        "name": "Cameron"
+      },
+      {
+        "id": 6,
+        "image": "image6.jpeg",
+        "name": "Josh"
+      },
+      {
+        "id": 7,
+        "image": "image7.jpeg",
+        "name": "Sara"
+      },
+      {
+        "id": 8,
+        "image": "image8.jpeg",
+        "name": "Beth"
+      },
+      {
+        "id": 9,
+        "image": "image9.jpeg",
+        "name": "Alice"
+      },
+      {
+        "id": 10,
+        "image": "image10.jpeg",
+        "name": "Claire"
+      },
+      {
+        "id": 11,
+        "image": "image11.jpeg",
+        "name": "Blake"
+      },
+    
+    ],
   };
 
   componentDidMount() {
@@ -53,8 +108,10 @@ class App extends Component {
 
   render() {
     return (
-    <div>
-      <Top
+    <div className = "mainbody">
+      <Navbar/>
+      <Heading/>
+      {/* <Top
   image={this.state.profile.image} 
   name = {this.state.profile.name}/><br></br>
   <Preferences 
@@ -65,7 +122,7 @@ class App extends Component {
   hobbies={this.state.profile.favHobbies}
   music={this.state.profile.favMusic}/><br></br>
   <Bio 
-  bio = {this.state.profile.bio}/>
+  bio = {this.state.profile.bio}/> */}
   <Create/>
  
   {/* <Suitors

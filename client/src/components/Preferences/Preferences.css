@@ -1,11 +1,47 @@
 
 ol {
-    border: solid black 1px;
+    border: solid black 3px;
     width: 350px;
-    margin: auto;
+    margin: auto 0;
     font-family: 'Rubik', sans-serif;
+    align-self: auto;
+    text-align: center;
+    display: inline-block;
+    color: black;
+    
 }
 
 th {
     font-family: 'Rubik', sans-serif;
+    padding: 8px;
+    text-align: center;
+    margin: auto 0;
+    border-bottom: 1px solid #ddd;
+    color: #B4886B;
+    
+   
+}
+
+/* .topprefernces{
+    font-size: 20px;
+    font-style: italic;
+    background-color:aliceblue;
+    margin: auto 0;
+    text-align: center;
+    display: inline;
+    color: #B4886B;
+} */
+
+.preferences{
+    background-color: aliceblue;
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    color: #B4886B;
+    display: flow-root;
+  justify-content: center;
+  overflow: scroll;
+  justify-content: space-around;
+    
+
 }
