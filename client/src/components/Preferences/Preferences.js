@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './Preferences.css';
 
 const Preferences = (props) =>(
-            <div className = "preferences">
+            <div className = "">
                 <div>
                     <tr >
                         <th>Movies</th>

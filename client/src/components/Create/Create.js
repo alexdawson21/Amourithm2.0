@@ -323,7 +323,7 @@ class Create extends Component {
                 onChange={e => this.change(e)} ></input>
             </form>
             <br></br>
-            <button onClick={e=>this.setFaves(e)}>Save Favourites</button>
+            <button class ="upload-button" onClick={e=>this.setFaves(e)}>Save Favourites</button>
 
             <form>
                 <label>Bio</label>
@@ -333,9 +333,9 @@ class Create extends Component {
                 placeholder="bio"
                 onChange={e => this.change(e)}></input>
             </form>
-            <button onClick={e =>this.setForm(e)}>Save info</button>
+            <button class = "upload-button" onClick={e =>this.setForm(e)}>Save info</button>
                 
-                <button onClick={e => this.onSubmit(e)}>Submit</button>
+                <button class = "upload-button" onClick={e => this.onSubmit(e)}>Submit</button>
 
     </div>
         )

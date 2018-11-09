@@ -1,6 +1,6 @@
 
 ol {
-    border: solid black 3px;
+    border: solid black 1px;
     width: 350px;
     margin: auto 0;
     font-family: 'Rubik', sans-serif;
@@ -39,7 +39,7 @@ th {
     font-style: italic;
     text-align: center;
     color: #B4886B;
-    display: flow-root;
+    display: flex;
   justify-content: center;
   overflow: scroll;
   justify-content: space-around;

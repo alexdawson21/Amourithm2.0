@@ -113,7 +113,8 @@ class App extends Component {
       <Heading/>
       {/* <Top
   image={this.state.profile.image} 
-  name = {this.state.profile.name}/><br></br>
+  name = {this.state.profile.name}/><br></br> */}
+  <Create/>
   <Preferences 
   movies={this.state.profile.favMovies}
   books={this.state.profile.favBooks}
@@ -122,11 +123,11 @@ class App extends Component {
   hobbies={this.state.profile.favHobbies}
   music={this.state.profile.favMusic}/><br></br>
   <Bio 
-  bio = {this.state.profile.bio}/> */}
-  <Create/>
+  bio = {this.state.profile.bio}/>
+
  
-  <Suitors
-  suitors = {this.state.suitors}/>
+  {/* <Suitors
+  suitors = {this.state.suitors}/> */}
   </div>
     );
   }
