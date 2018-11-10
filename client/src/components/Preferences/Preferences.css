@@ -46,3 +46,29 @@ th {
     
 
 }
+
+.table {
+
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    color: #B4886B;
+    display: inline;
+  justify-content: center;
+  overflow: scroll;
+  justify-content: space-around;
+  
+  
+  }
+  
+  .table2 {
+  
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    color: #B4886B;
+    display: inline;
+  justify-content: center;
+  overflow: scroll;
+  justify-content: space-around;
+  }

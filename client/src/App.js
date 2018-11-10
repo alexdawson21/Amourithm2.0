@@ -175,6 +175,7 @@ class App extends Component {
     },1000)
   }
   matcher =()=>{
+    console.log("hey")
     axios.get("api/profile")
     .then(res=>this.state.profile.matches.append(res.data[3]))
     setTimeout(()=>{
@@ -190,6 +191,7 @@ class App extends Component {
    
     {this.state.suitorsView?
       <Suitors
+      matcher={this.matcher}
       profiler={this.setSuitor}
       suitors = {this.state.suitors}
       suitorPage={this.suitorPage}
@@ -201,7 +203,8 @@ class App extends Component {
     :null}
     {this.state.matchesView?
       <Matches
-      matcher={this.matcher}
+      matches={this.state.profile.matches}
+      
       profiler={this.setSuitor}
       suitors = {this.state.suitors}
       suitorPage={this.suitorPage}

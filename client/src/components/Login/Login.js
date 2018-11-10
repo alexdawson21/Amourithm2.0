@@ -58,8 +58,8 @@ Logger = () =>{
             placeholder="password"
             onChange={e => this.onChange(e)} ></input>
             </form>
-            <button onClick={this.Logger} >Log in</button>
-            <button onClick={this.props.register}>Register</button>
+            <button className="upload-button" onClick={this.Logger} >Log in</button>
+            <button className="upload-button" onClick={this.props.register}>Register</button>
             </div>
         )
     }

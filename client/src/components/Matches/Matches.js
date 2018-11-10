@@ -10,28 +10,29 @@ class Matches extends Component {
     state = {
         showMatch: false,
         profile: {
-            image: this.props.matches[0].image,
-            seeking: this.props.matches[0].seeking,
-            name: this.props.matches[0].name,
-            bio: this.props.matches[0].bio,
-            favBooks: this.props.matches[0].favBooks,
-            favGraphics: this.props.matches[0].favGraphics,
-            favMovies: this.props.matches[0].favMovies,
-            favShows: this.props.matches[0].favShows,
-            favHobbies: this.props.matches[0].favHobbies,
-            favMusic: this.props.matches[0].favMusic,
+            image:"",
+            seeking: "",
+            name: "",
+            bio: "",
+            favBooks: [1,2,3,4,5],
+            favGraphics: [1,2,3,4,5],
+            favMovies: [1,2,3,4,5],
+            favShows: [1,2,3,4,5],
+            favHobbies: [1,2,3,4,5],
+            favMusic: [1,2,3,4,5],
             
-        },
+            showMatch: false,
+        }
     }
-
-    matcher = () =>{
+        openMatch = () =>{
+            axios.get("api/profile")
+            .then(res=>this.setState({profile: res.data[3]}))
+            setTimeout(()=>{
+                console.log(this.state.profile)
+            },2000)
+            setTimeout(()=>{this.setState({showMatch: true})},2000)
+        }
         
-    } 
-
-openMatch = () =>{
- this.setState({showMatch: true})
-}
-
     render(){
         return(
             <div>
@@ -51,6 +52,7 @@ openMatch = () =>{
         </div>)
         {this.state.showMatch?
       <Matchprofile
+            matcher = {this.props.matcher}
             image = {this.state.profile.image}
             name = {this.state.profile.name}
             movies={this.state.profile.favMovies}
