@@ -103,7 +103,8 @@ class Create extends Component {
         e.preventDefault();
         axios.post("api/profile", this.state.newProfile);
         setTimeout(() => {
-            console.log(this.state.newProfile)
+            this.props.loginPage();
+           
         }, 1000);
     }
 

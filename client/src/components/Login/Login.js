@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./Login.css";
 import axios from "axios";
+import Heading from "../Heading";
 
 class Login extends Component {
     
@@ -19,7 +20,7 @@ onChange = (e) =>{
 log = () => {
     console.log(this.state.profile)
 }
-console = () =>{
+Logger = () =>{
     axios.get("/api/profile/email",{
         params: {
             email: this.state.email,
@@ -33,23 +34,16 @@ console = () =>{
             alert("wrong email or password")
         }
         else{
-            alert("success")
+            this.props.loginSuccess(this.state.profile, false, true)
         }
     },1500)
-        // console.log(this.state.profile)
-        // if(this.state.password !== this.state.profile.password){
-        //     this.setState({profile: {}})
-        //     alert("Password or email is incorrect.")
-        // }
-        // else{
-        //     alert("login success")
-        // }
-    // })
 }
 
     render(){
         return(
+            
             <div>
+            <Heading/>
                 <form id = "Userinfo">
             <label>Email</label>
             <input 
@@ -64,8 +58,8 @@ console = () =>{
             placeholder="password"
             onChange={e => this.onChange(e)} ></input>
             </form>
-            <button onClick={this.console} >loginset</button>
-            <button onClick={this.log} >check profile</button>
+            <button onClick={this.Logger} >Log in</button>
+            <button onClick={this.props.register}>Register</button>
             </div>
         )
     }

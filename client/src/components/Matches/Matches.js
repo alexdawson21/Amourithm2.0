@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './Suitors.css';
-import Suitorprofile from "../Suitorprofile";
+import './Matches.css';
+import Matchprofile from "../Matchprofile";
 import Navbar from "../Navbar";
 import axios from 'axios';
      
     
-class Suitors extends Component {
+class Matches extends Component {
     state = {
+        showMatch: false,
         profile: {
-            image:"",
-            seeking: "",
-            name: "",
-            bio: "",
-            favBooks: [1,2,3,4,5],
-            favGraphics: [1,2,3,4,5],
-            favMovies: [1,2,3,4,5],
-            favShows: [1,2,3,4,5],
-            favHobbies: [1,2,3,4,5],
-            favMusic: [1,2,3,4,5],
+            image: this.props.matches[0].image,
+            seeking: this.props.matches[0].seeking,
+            name: this.props.matches[0].name,
+            bio: this.props.matches[0].bio,
+            favBooks: this.props.matches[0].favBooks,
+            favGraphics: this.props.matches[0].favGraphics,
+            favMovies: this.props.matches[0].favMovies,
+            favShows: this.props.matches[0].favShows,
+            favHobbies: this.props.matches[0].favHobbies,
+            favMusic: this.props.matches[0].favMusic,
             
         },
     }
@@ -27,13 +28,8 @@ class Suitors extends Component {
         
     } 
 
-openSuitor = () =>{
-    axios.get("api/profile")
-    .then(res=>this.setState({profile: res.data[3]}))
-    setTimeout(()=>{
-        console.log(this.state.profile)
-    },2000)
-    setTimeout(()=>{this.setState({showProfile: true})},2000)
+openMatch = () =>{
+ this.setState({showMatch: true})
 }
 
     render(){
@@ -44,17 +40,17 @@ openSuitor = () =>{
             profilePage={this.props.profilePage}
             matchPage={this.props.matchPage}/>             
     <div className="suitorbox"> 
-          {this.props.suitors.map(suitor =>
+          {this.props.matches.map(match =>
             <div>
                 <h1>Potential Matches</h1>
-                <h3>{suitor.name}</h3>
-            <img src = {suitor.image} onClick={this.openSuitor}></img>
+                <h3>{match.name}</h3>
+            <img src = {match.image} onClick={this.openMatch}></img>
             </div>
             )}
 
         </div>)
-        {this.state.showProfile?
-      <Suitorprofile
+        {this.state.showMatch?
+      <Matchprofile
             image = {this.state.profile.image}
             name = {this.state.profile.name}
             movies={this.state.profile.favMovies}
@@ -64,7 +60,6 @@ openSuitor = () =>{
             hobbies={this.state.profile.favHobbies}
             music={this.state.profile.favMusic}
             bio={this.state.profile.bio}
-            matcher={this.props.matcher}
       />
     :null}
             </div>
@@ -73,4 +68,4 @@ openSuitor = () =>{
 }
 
 
-export default Suitors;
+export default Matches;

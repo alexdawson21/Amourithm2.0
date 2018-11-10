@@ -5,9 +5,9 @@ class Navbar extends Component {
   render() {
     return (
         <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#news">Profile</a></li>
-        <li><a href="#contact">Suitors</a></li>
+        <li onClick={this.props.matchPage}><a class="active" href="#home">Matches</a></li>
+        <li onClick={this.props.profilePage}><a href="#news">Profile</a></li>
+        <li onClick={this.props.suitorPage}><a href="#contact">Suitors</a></li>
         <li><a href="#about">Logout</a></li>
       </ul>
     );
