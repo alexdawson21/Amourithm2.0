@@ -6,7 +6,10 @@
 }
 
 #chatControl {
-    position: absolute;
-    bottom: 0px;
+    position: relative;
+    width: 80%;
+}
+
+#chatInput {
     width: 100%;
 }

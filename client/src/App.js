@@ -186,7 +186,6 @@ class App extends Component {
     return (
 
     <div className = "mainbody">
-
    
     {this.state.suitorsView?
       <Suitors
