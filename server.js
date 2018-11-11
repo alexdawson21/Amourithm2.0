@@ -24,12 +24,17 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dummydb", funct
 });
 //test stuff
 
+<<<<<<< HEAD
 var server = app.listen(PORT, function () {
+=======
+var server = app.listen(PORT, function() {
+>>>>>>> edc6c46c147f5f388ee6c3202094ab2ac6189118
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
 var io = require('socket.io').listen(server);
 
 io.on('connection', function (socket) {
+<<<<<<< HEAD
   console.log(`SocketID: ${socket.id} connected!`);
   socket.emit('user connected', socket.id);
 
@@ -51,4 +56,27 @@ io.on('connection', function (socket) {
     console.log(`SocketID: ${socket.id} disconnected.`);
     socket.emit('user disconnected', socket.id);
   });
+=======
+console.log(`SocketID: ${socket.id} connected!`);
+socket.emit('user connected', socket.id);
+
+var timer = setInterval(function () {
+  socket.emit('timer');
+}, 1000);
+
+socket.on('subscribeToTimer', function () {
+  console.log('Socket is subscribing to timer');
+  timer;
+});
+
+socket.on('unsubscribeToTimer', function () {
+  console.log('Socket has unsubscribed to timer');
+  clearInterval(timer);
+});
+
+socket.on('disconnect', function () {
+  console.log(`SocketID: ${socket.id} disconnected.`);
+  socket.emit('user disconnected', socket.id);
+});
+>>>>>>> edc6c46c147f5f388ee6c3202094ab2ac6189118
 });

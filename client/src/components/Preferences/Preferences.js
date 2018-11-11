@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './Preferences.css';
 
 const Preferences = (props) =>(
-            <div className = "">
-                <div>
+            <div className = "table">
+                <div className = "table2" >
                     <tr >
                         <th>Movies</th>
                         <th>Shows</th>
@@ -42,7 +42,7 @@ const Preferences = (props) =>(
                 </div>
                 <br></br>
                 <br></br>
-                <div>
+                <div className = "table2">
                     <tr>
                         <th>Books</th>
                         <th>Graphic Novels/comics/manga</th>

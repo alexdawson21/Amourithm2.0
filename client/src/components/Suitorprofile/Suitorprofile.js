@@ -39,7 +39,7 @@ class Suitorprofile extends Component{
             music={this.state.profile.favMusic}/>
             <Bio
             bio={this.state.profile.bio}/>
-            <button onClick={this.props.matcher}>Match</button>
+            <button className = "upload-button" >Match</button>
            </div> 
            
         )
